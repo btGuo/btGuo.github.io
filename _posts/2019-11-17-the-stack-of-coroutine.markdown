@@ -4,7 +4,7 @@ title: "关于协程栈的一些思考"
 date:  2019-11-10 21:40:00
 categories: jekyll update
 ---
-**<font size = 5>此文适合对协程有一定了解，使用过协程的人阅读</font>**
+**<font size = 5>此文适合对协程有一定了解，使用过协程的人阅读</font>**  
 
 协程的运行需要栈，当任务切换时用来保存栈上等数据，再次上调度时，协程可以以之前状态继续运行。对栈的处理很关键，影响到整个协程库的性能。对于协程栈的类型，个人分成了两类，动态栈和静态栈，共享栈和非共享栈。
 
@@ -34,10 +34,7 @@ categories: jekyll update
 说了这么多，没有一个方案是可以完美解决问题的，每一个都有各自的特点。写c/c++协程库时，需要慎重选择栈处理方式。
 
 ### 一些参考资料
-[风云的coroutine](https://github.com/cloudwu/coroutine) 只有200行代码左右，使用共享栈的例子，入门级。
-
-[gcc split stack](https://gcc.gnu.org/wiki/SplitStacks) 一篇关于gcc分段栈的介绍
-
-[libgo wiki](https://github.com/yyzybb537/libgo/wiki/Why-cpp-coroutine%3F-Why-libgo%3F) 详细讨论了协程的设计问题
-
+[风云的coroutine](https://github.com/cloudwu/coroutine) 只有200行代码左右，使用共享栈的例子，入门级。  
+[gcc split stack](https://gcc.gnu.org/wiki/SplitStacks) 一篇关于gcc分段栈的介绍  
+[libgo wiki](https://github.com/yyzybb537/libgo/wiki/Why-cpp-coroutine%3F-Why-libgo%3F) 详细讨论了协程的设计问题  
 [协程栈的讨论](https://github.com/Tencent/libco/issues/80) github上关于共享协程栈的一篇讨论
